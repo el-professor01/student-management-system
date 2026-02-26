@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O-Level Student Management System</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+<div class="language-switch">
+<select id="languageSelect" onchange="setLanguage(this.value)">
+	<option value="en">English</option>
+	<option value="sw">Swahili</option>
+	<option value="fr">Français</option>
+</select>
+</div>
+
+<h1 id="mainTitle">O-Level Student Management System</h1>
+
+<!-- Register -->
+<section>
+<h2 id="registerTitle">Register Student</h2>
+<form id="studentForm">
+<input type="text" id="studentId">
+<input type="text" id="studentName">
+<input type="number" id="studentAge">
+
+<select id="studentGender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<select id="studentFormLevel">
+<option value="">Select Form</option>
+<option value="1">Form 1</option>
+<option value="2">Form 2</option>
+<option value="3">Form 3</option>
+<option value="4">Form 4</option>
+</select>
+
+<button type="submit" id="registerBtn">Register</button>
+</form>
+</section>
+
+<!-- Search -->
+<section>
+<h2 id="searchTitle">Search Student</h2>
+<input type="text" id="searchId">
+<button onclick="searchStudent()" id="searchBtn">Search</button>
+<button onclick="clearSearch()" id="clearBtn">Clear</button>
+<p id="searchMsg" class="search-message"></p>
+</section>
+
+<!-- Performance -->
+<section>
+<h2 id="performanceTitle">Add Academic Performance</h2>
+<form id="performanceForm">
+<input type="text" id="perfStudentId" placeholder="Student ID">
+<input type="number" id="math" placeholder="Math">
+<input type="number" id="english" placeholder="English">
+<input type="number" id="science" placeholder="Science">
+<input type="number" id="social" placeholder="Social Studies">
+<button type="submit" id="performanceBtn">Add Performance</button>
+</form>
+</section>
+
+<!-- Table -->
+<section>
+<h2 id="listTitle">Student List</h2>
+<table>
+<thead>
+<tr>
+<th id="thID">ID</th>
+<th id="thName">Name</th>
+<th id="thForm">Form</th>
+<th id="thMath">Math</th>
+<th id="thEnglish">English</th>
+<th id="thScience">Science</th>
+<th id="thSocial">Social</th>
+<th id="thAverage">Average</th>
+<th id="thActions">Actions</th>
+</tr>
+</thead>
+<tbody id="studentTable"></tbody>
+</table>
+</section>
+
+</div>
+
+<script src="java.js"></script>
+</body>
+</html>
